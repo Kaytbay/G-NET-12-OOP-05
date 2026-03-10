@@ -72,9 +72,9 @@ namespace oop_3
         public void Print()
         {
             Console.WriteLine("--- All Cinema Tickets ---");
-            foreach (var ticket in _tickets)
+            for (int i = 0; i < counter; i++)
             {
-                ticket.Print();
+                _tickets[i].Print();
             }
         }
 

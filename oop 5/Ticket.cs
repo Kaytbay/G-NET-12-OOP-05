@@ -88,7 +88,14 @@ namespace oop_3
 
         public object Clone()
         {
-            return this.MemberwiseClone();
+            Ticket copy = (Ticket)this.MemberwiseClone();
+
+            _ticketId++;
+            copy.TicketId = _ticketId;
+
+           
+
+            return copy;
         }
     }
 }

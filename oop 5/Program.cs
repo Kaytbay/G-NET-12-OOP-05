@@ -1,4 +1,7 @@
-﻿namespace oop_5
+﻿using oop_3;
+using System.Diagnostics;
+
+namespace oop_5
 {
     internal class Program
     {
@@ -96,6 +99,60 @@
 
 
             #endregion
+
+            #endregion
+
+
+            #region Part 2:
+
+            Cinema cinema = new Cinema("Star");
+            cinema.OpenCinema();
+
+            StandardTicket t1 = new StandardTicket("Inception",  80 ,"A5");
+
+
+
+            VIPTicket t2 = new VIPTicket("Avengers", 200, true);
+
+            IMAXTicket t3 = new IMAXTicket("Avengers2", 123, true);       
+
+            t1.Book();
+            t2.Book();
+            t3.Book();
+
+            cinema.AddTicket(t1);
+            cinema.AddTicket(t2);   
+            cinema.AddTicket(t3);
+
+
+            cinema.Print();
+
+
+
+
+            Console.WriteLine("\n--- Clone Test ---");
+
+            VIPTicket copyVip = (VIPTicket)t2.Clone();
+            copyVip.MovieName = "Interstellar";
+            copyVip.Cancel();
+
+            Console.Write("Original : ");
+            t2.Print();
+            Console.Write("Clone    : ");
+            copyVip.Print();
+
+            t1.Cancel();
+            Console.WriteLine("\n--- After Cancellation ---");
+            t1.Print();
+
+
+
+            Console.WriteLine("\n--- Booking Helper ---");
+
+            IPrintable[] printableArray = new IPrintable[] { t1, t2, t3 };
+            BookingHelper.PrintAll(printableArray);
+
+            cinema.CloseCinema();
 
             #endregion
         }
