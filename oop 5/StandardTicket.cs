@@ -35,6 +35,5 @@ namespace oop_3
             Console.WriteLine( $"Ticket ID: {TicketId}, Movie Name: {MovieName}, Price After Tax: {PriceAfterTax}" +
                             $" , Seat Numper : {SeatNumber} , Booked : {s}");
         }
-
     }
 }
