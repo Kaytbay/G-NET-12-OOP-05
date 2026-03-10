@@ -36,8 +36,9 @@ namespace oop_3
 
         public override void Print()
         {
+            string s = IsBooked ? "Yes" : "No";
             Console.WriteLine($"Ticket ID: {TicketId}, Movie Name: {MovieName}, Price After Tax: {PriceAfterTax}"
-                  + $", Lounge Access: {LoungeAccess}, Service Fee: {ServiceFee}");
+                  + $", Lounge Access: {LoungeAccess}, Service Fee: {ServiceFee} , Booked : {s}");
         }
 
     }

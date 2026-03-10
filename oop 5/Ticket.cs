@@ -59,5 +59,30 @@ namespace oop_3
 
 
         public abstract void Print();
+
+
+        public bool IsBooked { get; private set; }
+
+        public bool Book()
+        {
+            if (IsBooked)
+            {
+                Console.WriteLine("Booking Failed");
+                return false;
+            }
+            IsBooked = true;
+            return true;
+        }
+
+        public bool Cancel()
+        {
+            if (!IsBooked)
+            {
+                Console.WriteLine("Cancellation Failed");
+                return false;
+            }
+            IsBooked = false;
+            return true;
+        }
     }
 }
